@@ -34,6 +34,24 @@ curl -L -o ~/Desktop/SSOAD_Novo_semcache.ovpn https://raw.githubusercontent.com/
 chmod 600 ~/Desktop/SSOAD_Novo_semcache.ovpn
 echo "✅ Arquivo OpenVPN adicionado na Área de Trabalho!"
 
+#!/bin/bash
+
+# Caminho do arquivo na Área de Trabalho
+OVPN_FILE="$HOME/Desktop/SSOAD_Novo_semcache.ovpn"
+
+# Pasta de configuração do OpenVPN Connect
+OPENVPN_DIR="$HOME/Library/Application Support/OpenVPN Connect/config"
+
+# Cria a pasta se não existir
+mkdir -p "$OPENVPN_DIR"
+
+# Copia o arquivo para a pasta de configuração
+cp "$OVPN_FILE" "$OPENVPN_DIR/"
+
+# Ajusta permissões
+chmod 600 "$OPENVPN_DIR/$(basename "$OVPN_FILE")"
+
+echo "✅ Arquivo .ovpn importado para OpenVPN Connect!"
 
 # ------------------------------
 # Opcional: instalar o NinjaOne
