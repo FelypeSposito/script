@@ -25,6 +25,16 @@ curl -L -o ~/Desktop/Ninja_MDM.pkg "$NINJA_URL"
 echo "🚀 Executando script de apps..."
 /tmp/scriptApps.sh
 
+
+# ======================
+# Baixar arquivo OpenVPN na Área de Trabalho
+# ======================
+echo "📥 Baixando arquivo OpenVPN para a Área de Trabalho..."
+curl -L -o ~/Desktop/SSOAD_Novo_semcache.ovpn https://raw.githubusercontent.com/FelypeSposito/script/refs/heads/main/SSOAD_Novo_semcache.ovpn
+chmod 600 ~/Desktop/SSOAD_Novo_semcache.ovpn
+echo "✅ Arquivo OpenVPN adicionado na Área de Trabalho!"
+
+
 # ------------------------------
 # Opcional: instalar o NinjaOne
 # ------------------------------
